@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 type SearchBarProps = {
   onSearch?: (query: string) => void;
@@ -18,7 +17,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={{marginHorizontal: 10 }}>🔍</Text>
+      <Text style={styles.icon}>🔍</Text>
+      <View style={styles.separator} />
       <TextInput
         style={styles.input}
         placeholder="Search..."
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 2,
     borderRadius: 10,
-    backgroundColor: '#2a3545',
+    backgroundColor: '#4a5b70',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
@@ -48,6 +48,13 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginHorizontal: 10,
+    fontSize: 18,
+  },
+  separator: {
+    width: 1,
+    backgroundColor: '#c1c1c1',
+    alignSelf: 'stretch', // Ensures the line stretches to the full height of the parent
+    marginVertical: 2, // Adds a small margin for aesthetics if needed
   },
   input: {
     flex: 1,

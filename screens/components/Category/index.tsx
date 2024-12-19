@@ -1,4 +1,3 @@
-// Category.tsx (or Category.js if you're using JS)
 import React from 'react';
 import { ScrollView, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import Frame from '../Frame';
@@ -6,20 +5,22 @@ import Frame from '../Frame';
 interface CategoryProps {
   title: string;
   data: { title: string; description: string; backgroundImage: string }[];
-  categoryName: string;
-  onSeeMorePress: (category: string) => void;
+  onSeeMorePress: (categoryData: any) => void;
 }
 
-const Category: React.FC<CategoryProps> = ({ title, data, categoryName, onSeeMorePress }) => {
+const Category: React.FC<CategoryProps> = ({ title, data, onSeeMorePress }) => {
   return (
     <View style={styles.category}>
       <View style={styles.categoryHeader}>
         <Text style={styles.categoryTitle}>{title}</Text>
-        <TouchableOpacity onPress={() => onSeeMorePress(categoryName)}>
+        <TouchableOpacity onPress={() => onSeeMorePress(data)}>
           <Text style={styles.seeMore}>See More</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollView}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}>
         {data.map((frame, index) => (
           <Frame
             key={index}
