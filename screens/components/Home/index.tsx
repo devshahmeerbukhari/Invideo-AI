@@ -11,44 +11,44 @@ type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 function Home(): React.JSX.Element {
   const navigation = useNavigation<HomeScreenNavigationProp>(); // Type the navigation prop
 
-  const GenFramesData = Array.from({length: 10}, (_, index) => ({
+  const GenFramesData = Array.from({length: 11}, (_, index) => ({
     title: `Generative AI Videos`,
     description: `Generative Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
   }));
 
-  const AdvFramesData = Array.from({length: 5}, (_, index) => ({
+  const AdvFramesData = Array.from({length: 10}, (_, index) => ({
     title: `Create Advertisements`,
     description: `Advertisement Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
   }));
 
-  const FilmFramesData = Array.from({length: 5}, (_, index) => ({
+  const FilmFramesData = Array.from({length: 10}, (_, index) => ({
     title: `Make AI Film`,
     description: `Film Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
   }));
 
-  const ScriptFramesData = Array.from({length: 5}, (_, index) => ({
+  const ScriptFramesData = Array.from({length: 10}, (_, index) => ({
     // title: `Script Frame ${index + 1}`,
     title: `Script Frame`,
     description: `Script Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
   }));
 
-  const AnimatedFramesData = Array.from({length: 5}, (_, index) => ({
+  const AnimatedFramesData = Array.from({length: 10}, (_, index) => ({
     title: `Animated videos`,
     description: `Script Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
   }));
 
-  const ShortsFramesData = Array.from({length: 5}, (_, index) => ({
+  const ShortsFramesData = Array.from({length: 10}, (_, index) => ({
     title: `Create short video`,
     description: `Short Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
   }));
 
-  const FacelessFramesData = Array.from({length: 5}, (_, index) => ({
+  const FacelessFramesData = Array.from({length: 10}, (_, index) => ({
     title: `Faceless Video`,
     description: `Faceless Description for frame ${index + 1}`,
     backgroundImage: `https://source.unsplash.com/random/70x100?sig=${index}`,
