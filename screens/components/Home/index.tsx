@@ -5,6 +5,7 @@ import SearchBar from '../SearchBar';
 import {useNavigation} from '@react-navigation/native';
 import { RootStackParamList } from '../../../types';    // Import the param list type
 import {StackNavigationProp} from '@react-navigation/stack'; // Import the type for the navigation prop
+import { Text, View, TouchableOpacity, Button } from 'react-native';  //Temperory Imports
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -59,11 +60,46 @@ function Home(): React.JSX.Element {
     navigation.navigate('SeeMore', {categoryData});
   };
 
+  const handleUserAccountPress = () => {
+    navigation.navigate('UserAccount', {
+      profileName: 'Shahmeer Bukhari', // Replace with dynamic values as needed
+      profileEmail: 'shahmeer@example.com',
+      profileImageUri: 'https://example.com/profile-image.jpg',
+    });
+  };
+
+  const handleHome2Press = () => {
+    navigation.navigate('Home2');
+  }
+
   return (
     <ScrollView
       style={styles.container}
       contentContainerStyle={styles.scrollViewContainer}>
       <SearchBar />
+
+      {/* Temerory Button for User Account */}
+      <View style={styles.buttonContainer}>
+
+        {/* Option 2: Using TouchableOpacity for customization */}
+        <TouchableOpacity
+          style={styles.customButton}
+          onPress={handleUserAccountPress}>
+          <Text style={styles.buttonText}>User Account</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Temerory Button for Home */}
+      <View style={styles.buttonContainer}>
+
+        {/* Option 2: Using TouchableOpacity for customization */}
+        <TouchableOpacity
+          style={styles.customButton}
+          onPress={handleHome2Press}>
+          <Text style={styles.buttonText}>Home 2</Text>
+        </TouchableOpacity>
+      </View>
+      
       <Category
         title="Generative AI Videos"
         data={GenFramesData}
@@ -112,6 +148,22 @@ const styles = StyleSheet.create({
   scrollViewContainer: {
     paddingBottom: 10,
     paddingHorizontal: 10,
+  },
+  buttonContainer: {
+    marginVertical: 20,
+    alignItems: 'center',
+  },
+  customButton: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
